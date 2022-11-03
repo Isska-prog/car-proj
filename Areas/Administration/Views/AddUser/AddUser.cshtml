@@ -1,0 +1,244 @@
+﻿@model CarsSystem.WebClient.MVC.Areas.Administration.Models.AddUserViewModel
+
+@{
+    ViewBag.Title = "Add user";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="row">
+    <h1 class="text-center">Adding customer and car page!</h1>
+    <div class="well col-md-6 col-md-offset-3">
+        <h3 class="text-center">Fill all text boxes for customer information.</h3>
+        <br />
+        @using (Html.BeginForm("AddUser", "AddUser", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.Username, "Username: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.Username, new { id = "UsernameTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.Username)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.FirstName, "First name: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.FirstName, new { id = "FirstNameTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.FirstName)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.SecondName, "Second name: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.SecondName, new { id = "SecondNameTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.SecondName)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.LastName, "Last name: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.LastName, new { id = "LastNameTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.LastName)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.Egn, "Egn: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.Egn, new { id = "EGNTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.Egn)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.NumberOfIdCard, "Number of Id card: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.NumberOfIdCard, new { id = "NumberOfIdCardTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.NumberOfIdCard)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.DateOfIssue, "Date of issue: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.DateOfIssue, new { id = "IssueTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.User.DateOfIssue)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.City, "City: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.City, new { id = "CityTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.City)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.PhoneNumber, "Phone number: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.PhoneNumber, new { id = "PhoneTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.PhoneNumber)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.User.Email, "E-mail: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.User.Email, new { id = "EmailTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.Email)
+                </div>
+            </div>
+            <br />
+            <h3 class="text-center">Fill all text boxes for car information.</h3>
+            <br />
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.Manufacturer, "Manufacturer: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.Manufacturer, new { id = "ManufacturerTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.Manufacturer)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.Model, "Model: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.Model, new { id = "ModelTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.Model)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.TypeOfEngine, "Type of engine: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.EnumDropDownListFor(m => m.Car.TypeOfEngine, new { id = "TypeOfEngineDropDownList", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.TypeOfEngine)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.RegistrationNumber, "Registration number: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.RegistrationNumber, new { id = "RegistrationTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.RegistrationNumber)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.VINNumber, "VIN number: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.VINNumber, new { id = "VINTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.VINNumber)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.CountOfTyres, "Count of tyres: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.CountOfTyres, new { id = "CountOfTyresTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.CountOfTyres)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.CountOfDoors, "Count of doors: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.CountOfDoors, new { id = "CountOfDoorsTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.CountOfDoors)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.TypeOfCar, "Type of car: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.EnumDropDownListFor(m => m.Car.TypeOfCar, new { id = "TypeOfCarDropDownList", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.TypeOfCar)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.YearOfManufactoring, "Year of manufactoring: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.YearOfManufactoring, new { id = "ManufactoringYearTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.Car.YearOfManufactoring)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.ValidUntilAnnualCheckUp, "Valid until annual check up: ")
+
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.ValidUntilAnnualCheckUp, new { id = "CheckUpTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.Car.ValidUntilAnnualCheckUp)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.ValidUntilVignette, "Valid until vignette: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.ValidUntilVignette, new { id = "VignetteTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.Car.ValidUntilVignette)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-5 text-right">
+                    @Html.LabelFor(m => m.Car.ValidUntilInsurance, "Valid until insurance: ")
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.Car.ValidUntilInsurance, new { id = "InsuranceTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.Car.ValidUntilInsurance)
+                </div>
+            </div>
+            <br />
+            <div class="text-center">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input type="submit" value="Add new customer!" class="form-control">
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+        $(function () {
+            $(".datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+}
+
